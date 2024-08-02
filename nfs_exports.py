@@ -319,7 +319,7 @@ def replace_export(path, clients, options, clear_all, result):
     try:
         outfile = tempfile.NamedTemporaryFile(dir=os.path.dirname(_EXPORTS),
                                               prefix=os.path.basename(_EXPORTS),
-                                              delete=False, suffix=".tmp")
+                                              delete=False, suffix=".tmp", mode='w')
         tmppath = outfile.name
     except (OSError, IOError) as err:
         result['error'] = 'Error with tmpfile: %s' % (err.strerror)
